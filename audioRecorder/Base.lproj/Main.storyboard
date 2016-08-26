@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BGN-N5-LxF">
+                                <rect key="frame" x="101" y="254" width="124" height="92"/>
+                                <state key="normal" title="录音（松开结束）"/>
+                                <connections>
+                                    <action selector="recordButtonTouchCancel:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="wld-ez-6ne"/>
+                                    <action selector="recordButtonTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="k9s-Ja-1uB"/>
+                                    <action selector="recordButtonTouchEnd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PYb-oe-0F6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K7i-3m-Iof">
+                                <rect key="frame" x="359" y="254" width="124" height="92"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="92" id="U2N-oW-rHq"/>
+                                    <constraint firstAttribute="width" constant="124" id="pzt-zF-XSs"/>
+                                </constraints>
+                                <state key="normal" title="播放"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="U2N-oW-rHq"/>
+                                        <exclude reference="pzt-zF-XSs"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="U2N-oW-rHq"/>
+                                        <include reference="pzt-zF-XSs"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="playButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cBV-wP-prG"/>
+                                </connections>
+                            </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Neg-Kt-Gqj">
+                                <rect key="frame" x="0.0" y="-2" width="150" height="2"/>
+                            </progressView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Neg-Kt-Gqj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="123" id="A7b-WP-nt3"/>
+                            <constraint firstItem="K7i-3m-Iof" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="A8c-S1-Ynr"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="K7i-3m-Iof" secondAttribute="bottom" constant="72" id="CRj-Ie-e75"/>
+                            <constraint firstItem="BGN-N5-LxF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="W9u-Hf-sfC"/>
+                            <constraint firstItem="Neg-Kt-Gqj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XM1-Lo-1Zn"/>
+                            <constraint firstItem="BGN-N5-LxF" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="bUi-Tn-26F"/>
+                            <constraint firstItem="Neg-Kt-Gqj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="28" id="qSo-vs-XbU"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Neg-Kt-Gqj"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="A7b-WP-nt3"/>
+                                <exclude reference="XM1-Lo-1Zn"/>
+                                <exclude reference="qSo-vs-XbU"/>
+                                <exclude reference="W9u-Hf-sfC"/>
+                                <exclude reference="bUi-Tn-26F"/>
+                                <exclude reference="A8c-S1-Ynr"/>
+                                <exclude reference="CRj-Ie-e75"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="Neg-Kt-Gqj"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="A7b-WP-nt3"/>
+                                <include reference="XM1-Lo-1Zn"/>
+                                <include reference="qSo-vs-XbU"/>
+                                <include reference="W9u-Hf-sfC"/>
+                                <include reference="bUi-Tn-26F"/>
+                                <include reference="A8c-S1-Ynr"/>
+                                <include reference="CRj-Ie-e75"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="audioPower" destination="Neg-Kt-Gqj" id="a65-SE-uqU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="439.5" y="429"/>
+        </scene>
+    </scenes>
+</document>
